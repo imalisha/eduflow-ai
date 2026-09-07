@@ -1,3 +1,12 @@
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
 * {
   box-sizing: border-box;
 }
@@ -2897,4 +2906,162 @@ footer p {
 
 .profile-logout-button span {
   font-size: 15px;
+}
+
+/* =========================================
+   FULL SCREEN AUTH BACKGROUND
+========================================= */
+
+.auth-page {
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  box-sizing: border-box;
+
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.55),
+      rgba(15, 23, 42, 0.55)
+    ),
+    url('./assets/EduFlow AI background image.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow-y: auto;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+/* ==========================================
+   CHANGE PASSWORD
+   ========================================== */
+
+.profile-password-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 12px;
+  border: none;
+  background: transparent;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.profile-password-button:hover {
+  background: #f1f5f9;
+}
+
+.change-password-section {
+  padding: 4px 0 8px;
+}
+
+.change-password-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.change-password-title strong {
+  font-size: 15px;
+  color: #0f172a;
+}
+
+.change-password-close {
+  width: 26px;
+  height: 26px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.change-password-close:hover {
+  background: #f1f5f9;
+}
+
+.change-password-section .form-group {
+  margin-bottom: 12px;
+}
+
+.change-password-section .form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.change-password-section .form-group input {
+  width: 100%;
+  padding: 10px 11px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  font-size: 13px;
+  background: #ffffff;
+}
+
+.change-password-section .form-group input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.password-error {
+  padding: 9px 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #dc2626;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.password-success {
+  padding: 9px 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  background: #f0fdf4;
+  color: #16a34a;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.change-password-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.change-password-actions button {
+  flex: 1;
+  min-height: 38px;
+  font-size: 12px;
 }
