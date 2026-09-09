@@ -11,6 +11,9 @@ function LoginPage({ onLogin }) {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [role, setRole] = useState('student')
 
+  const[showPassword, setShowPassword] = useState(false)
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+
   const [isSignup, setIsSignup] = useState(false)
   const [isForgotPassword, setIsForgotPassword] = useState(false)
 
@@ -451,16 +454,37 @@ function LoginPage({ onLogin }) {
                 Password
               </label>
 
-              <input
-                type="password"
-                value={password}
-                onChange={(e) =>
-                  setPassword(e.target.value)
-                }
-                placeholder="Enter your password"
-                minLength={6}
-                required
-              />
+              <div className="password-input-wrapper">
+
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  value={password}
+                  onChange={(e) =>
+                    setPassword(e.target.value)
+                  }
+                  placeholder="Enter your password"
+                  minLength={6}
+                  required
+                />
+
+                <button
+                  type="button"
+                  className="password-toggle"
+                  onClick={() =>
+                    setShowPassword(
+                      (current) => !current
+                    )
+                  }
+                  aria-label={
+                    showPassword
+                      ? 'Hide password'
+                      : 'Show password'
+                  }
+                >
+                  {showPassword ? '🙈' : '👁️'}
+                </button>
+
+              </div>
 
             </div>
 
@@ -479,18 +503,45 @@ function LoginPage({ onLogin }) {
                 Confirm Password
               </label>
 
-              <input
-                type="password"
-                value={confirmPassword}
-                onChange={(e) =>
-                  setConfirmPassword(
-                    e.target.value
-                  )
-                }
-                placeholder="Confirm your password"
-                minLength={6}
-                required
-              />
+              <div className="password-input-wrapper">
+
+                <input
+                  type={
+                    showConfirmPassword
+                      ? 'text'
+                      : 'password'
+                  }
+                  value={confirmPassword}
+                  onChange={(e) =>
+                    setConfirmPassword(
+                      e.target.value
+                    )
+                  }
+                  placeholder="Confirm your password"
+                  minLength={6}
+                  required
+                />
+
+                <button
+                  type="button"
+                  className="password-toggle"
+                  onClick={() =>
+                    setShowConfirmPassword(
+                      (current) => !current
+                    )
+                  }
+                  aria-label={
+                    showConfirmPassword
+                      ? 'Hide password'
+                      : 'Show password'
+                  }
+                >
+                  {showConfirmPassword
+                    ? '🙈'
+                    : '👁️'}
+                </button>
+
+              </div>
 
             </div>
 
